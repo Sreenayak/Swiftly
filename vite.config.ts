@@ -39,7 +39,7 @@ function uxpilotCanvasVhBridge(): Plugin {
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
-  base: process.env.VITE_BASE || "/",
+ base: "/Swiftly/",
   plugins: [react(), uxpilotCanvasVhBridge()],
   resolve: {
     alias: {
