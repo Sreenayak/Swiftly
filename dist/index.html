@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<script>(function(){
+if (window.__UXP_VH_FIX_BRIDGE__) return;
+window.__UXP_VH_FIX_BRIDGE__ = true;
+window.addEventListener('message', function(e) {
+var d = e.data;
+if (!d || d.type !== 'uxpilot:install-vh-fix' || typeof d.payload !== 'string') return;
+if (window.__uxpVhFixInjected) return;
+window.__uxpVhFixInjected = true;
+var s = document.createElement('script');
+s.setAttribute('data-uxp', 'vh-fix');
+s.textContent = d.payload;
+(document.head || document.documentElement).appendChild(s);
+});
+})();</script>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiftly — On-Demand Home Services Marketplace</title>
+    <script type="module" crossorigin src="/assets/index-BVr2QbBj.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BgbpsBIR.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

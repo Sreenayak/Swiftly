@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 214 31% 8%;
+    --foreground: 210 20% 92%;
+    --card: 214 27% 14%;
+    --card-foreground: 210 20% 92%;
+    --popover: 214 27% 14%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 213 31% 42%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 214 28% 17%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 214 28% 17%;
+    --muted-foreground: 213 15% 55%;
+    --accent: 38 68% 56%;
+    --accent-foreground: 214 31% 8%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 22% 20%;
+    --input: 214 22% 20%;
+    --ring: 213 31% 42%;
+    --chart-1: 213 31% 42%;
+    --chart-2: 38 68% 56%;
+    --chart-3: 160 60% 45%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+    --sidebar-background: 214 27% 14%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 213 31% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 22% 20%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 214 22% 20%;
+    --sidebar-ring: 213 31% 42%;
+
+    /* Swiftly brand tokens */
+    --swiftly-canvas: #10151c;
+    --swiftly-deep: #1e2a38;
+    --swiftly-accent: #4a6c8f;
+    --swiftly-cta: #d9a441;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Manrope', sans-serif;
+    background-color: #10151c;
+    color: #e2e8f0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-sora {
+    font-family: 'Sora', sans-serif;
+  }
+  .font-manrope {
+    font-family: 'Manrope', sans-serif;
+  }
+  .bg-canvas {
+    background-color: #10151c;
+  }
+  .bg-deep {
+    background-color: #1e2a38;
+  }
+  .bg-swiftly-accent {
+    background-color: #4a6c8f;
+  }
+  .bg-cta {
+    background-color: #d9a441;
+  }
+  .text-cta {
+    color: #d9a441;
+  }
+  .text-swiftly-accent {
+    color: #4a6c8f;
+  }
+  .border-deep {
+    border-color: #1e2a38;
+  }
+  .border-accent {
+    border-color: #4a6c8f;
+  }
+  .swiftly-card {
+    background-color: #1e2a38;
+    border: 1px solid rgba(74, 108, 143, 0.2);
+    border-radius: 12px;
+  }
+  .swiftly-card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .swiftly-card-hover:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 12px 40px rgba(74, 108, 143, 0.18);
+    border-color: rgba(74, 108, 143, 0.5);
+  }
+  .service-card-hover {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  }
+  .service-card-hover:hover {
+    transform: scale(1.04);
+    box-shadow: 0 16px 48px rgba(217, 164, 65, 0.15), 0 4px 16px rgba(74, 108, 143, 0.2);
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, #10151c 0%, #1e2a38 50%, #10151c 100%);
+  }
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(74, 108, 143, 0.3);
+  }
+  .glow-cta {
+    box-shadow: 0 0 20px rgba(217, 164, 65, 0.4);
+  }
+
+  /* ── Scroll-reveal animations ── */
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .animate-fade-up.in-view,
+  .animate-fade-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .animate-fade-in.in-view,
+  .animate-fade-in.revealed {
+    opacity: 1;
+  }
+
+  .animate-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+  .animate-slide-left.in-view,
+  .animate-slide-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+  .animate-slide-right.in-view,
+  .animate-slide-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-scale-in {
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .animate-scale-in.in-view,
+  .animate-scale-in.revealed {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Stagger delays */
+  .delay-100 { transition-delay: 0.1s; }
+  .delay-200 { transition-delay: 0.2s; }
+  .delay-300 { transition-delay: 0.3s; }
+  .delay-400 { transition-delay: 0.4s; }
+  .delay-500 { transition-delay: 0.5s; }
+  .delay-600 { transition-delay: 0.6s; }
+
+  /* Hero entrance animations (CSS-only, no JS needed) */
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroFadeRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+  @keyframes counterUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text-enter {
+    animation: heroFadeUp 0.8s ease forwards;
+  }
+  .hero-badge-enter {
+    animation: heroFadeUp 0.6s ease 0.1s both;
+  }
+  .hero-h1-enter {
+    animation: heroFadeUp 0.75s ease 0.25s both;
+  }
+  .hero-p-enter {
+    animation: heroFadeUp 0.7s ease 0.4s both;
+  }
+  .hero-btns-enter {
+    animation: heroFadeUp 0.7s ease 0.55s both;
+  }
+  .hero-badges-enter {
+    animation: heroFadeUp 0.7s ease 0.7s both;
+  }
+  .hero-visual-enter {
+    animation: heroFadeRight 0.85s ease 0.3s both;
+  }
+  .float-card {
+    animation: floatCard 4s ease-in-out infinite;
+  }
+  .float-card-delayed {
+    animation: floatCard 4s ease-in-out 2s infinite;
+  }
+  .stat-item-enter {
+    opacity: 0;
+    animation: counterUp 0.6s ease forwards;
+  }
+}
